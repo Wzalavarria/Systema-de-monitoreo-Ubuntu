@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Monitoreo del Sistema</title>
+    <style>
+        body { font-family: Arial; margin: 20px; }
+        .card { border: 1px solid #ccc; padding: 15px; margin: 10px 0; border-radius: 5px; }
+        h2 { margin-top: 0; }
+        .update-btn { padding: 10px 20px; margin-top: 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Monitoreo del Sistema</h1>
+
+    <div class="card">
+        <h2>CPU</h2>
+        <p>Uso: {{ cpu_percent }}%</p>
+        <p>Núcleos: {{ cpu_count }}</p>
+    </div>
+
+    <div class="card">
+        <h2>Memoria RAM</h2>
+        <p>Total: {{ memoria_total_gb }} GB</p>
+        <p>Usada: {{ memoria_usada_gb }} GB ({{ memoria_percent }}%)</p>
+    </div>
+
+    <div class="card">
+        <h2>Disco</h2>
+        <p>Total: {{ disco_total_gb }} GB</p>
+        <p>Usado: {{ disco_usado_gb }} GB ({{ disco_percent }}%)</p>
+        <p>Libre: {{ disco_libre_gb }} GB</p>
+    </div>
+
+    <div class="card">
+        <h2>Sistema Operativo</h2>
+        <p>{{ so }} - {{ so_version }}</p>
+    </div>
+
+    <form method="get">
+        <button class="update-btn" type="submit">Actualizar</button>
+    </form>
+</body>
+</html>
